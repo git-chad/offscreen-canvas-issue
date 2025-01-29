@@ -1,16 +1,16 @@
-import { useFrame } from "@react-three/fiber"
-import { useRef } from "react"
-import { Mesh } from "three"
+import { useFrame } from "@react-three/fiber";
+import { useRef } from "react";
+import { Mesh } from "three";
 
 const ContactScene = () => {
-  const cubeRef = useRef<Mesh>(null)
+  const cubeRef = useRef<Mesh>(null);
 
   useFrame(({ clock }) => {
     if (cubeRef.current) {
-      cubeRef.current.rotation.x = clock.getElapsedTime()
-      cubeRef.current.rotation.y = clock.getElapsedTime()
+      cubeRef.current.rotation.x = clock.getElapsedTime();
+      cubeRef.current.rotation.y = clock.getElapsedTime();
     }
-  })
+  });
 
   return (
     <>
@@ -19,7 +19,7 @@ const ContactScene = () => {
         <meshBasicMaterial color="blue" />
       </mesh>
     </>
-  )
-}
+  );
+};
 
-export default ContactScene
+export default ContactScene;
